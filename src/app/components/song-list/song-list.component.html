@@ -1,0 +1,27 @@
+
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-7">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <td>Nombre</td>
+              <td>Artista</td>
+              <td>Album</td>
+              <td>Género</td>
+              <td>Duración</td>
+            </tr>
+          </thead>
+          <tbody *ngFor="let song of canciones">
+                <tr>
+                  <td>{{song.nombre}}</td>
+                  <td>{{song.artista}}</td>
+                  <td>{{song.album}}</td>
+                  <td>{{song.genero}}</td>
+                  <td>{{song.duracion}}</td>
+                </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
