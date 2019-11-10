@@ -1,27 +1,34 @@
 
-<div class="container mt-5">
+<div class="container mt-10">
     <div class="row">
-      <div class="col-md-7">
+      <div class="col-md-12">
         <table class="table table-bordered table-hover">
           <thead>
-            <tr>
-              <td>Nombre</td>
+            <tr style="color:white;">
+              <td >Nombre</td>
               <td>Artista</td>
               <td>Album</td>
               <td>Género</td>
-              <td>Duración</td>
+              <td >Duración</td>
             </tr>
           </thead>
-          <tbody *ngFor="let song of canciones">
-                <tr>
-                  <td>{{song.nombre}}</td>
-                  <td>{{song.artista}}</td>
-                  <td>{{song.album}}</td>
-                  <td>{{song.genero}}</td>
-                  <td>{{song.duracion}}</td>
+          <tbody>
+                <tr style="color:white" *ngFor="let song of songs" >
+                  <td style = "word-wrap: normal"> {{song.nombre}}</td>
+                  <td style = "word-wrap: normal">{{song.artista}}</td>
+                  <td style = "word-wrap: normal">{{song.album}}</td>
+                  <td style = "word-wrap: normal">{{song.genero}}</td>
+                  <td style = "word-wrap: normal">{{song.duracion}}</td>
+                  <td >
+                    <a [routerLink]="['/songs/edit',song._id]" class="btn btn-info" style="background-color: indigo;">Editar</a>
+                    <a  routerLink="/songs/edit" class="btn btn-info" style=" background-color: darkred;" (click)="deleteSong(song._id)">Eliminar</a>
+                  </td>
                 </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+  <footer class="navbar-fixed-bottom">
+    <h3 style="color: white;">El contenido mostrado en esta página puede estar desfasado por 30 segundos o menos con el real</h3>
+  </footer>
