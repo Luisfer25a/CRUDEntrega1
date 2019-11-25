@@ -1,3 +1,5 @@
+
+
 <div class="col-md-10 offset-md-1">
     <div class="card bg-transparent border-dark">
       <div class="card-body">
@@ -17,7 +19,23 @@
           <div class="form-group">
             <input type="text" name="duracion" [(ngModel)]="cancion.duracion" placeholder="Duracion" class="form-control" style="font-size: medium; background-color:darkcyan; color: white;">
           </div>
-          <button class="btn btn-success btn-block" style="background-color:indigo;" (click)="edit ? updateSong() : saveNewSong()">
+	<div class="modal" id="myModal" role="dialog">
+    	 <div class="modal-dialog">
+	      <div class="modal-content">
+		<div class="modal-header">
+		  <h4 class="modal-title"> Éxito </h4>
+		  <button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+		<div class="modal-body">
+		  <p>Registro guardado exitosamente.</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal"(click)="edit ? updateSong() : saveNewSong()">Cerrar</button>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+          <button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-block" style="background-color:indigo;">
             Guardar
           </button>
         </form>

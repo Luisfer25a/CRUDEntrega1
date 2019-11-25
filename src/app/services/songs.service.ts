@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SongsService {
 
-  API_URI = 'http://localhost:3000/api/v1/canciones'
+  API_URI = 'http://172.26.10.226:3000/api/v1/canciones'
   constructor(private http: HttpClient) { }
 
   getSongs() {
@@ -23,7 +23,7 @@ export class SongsService {
   }
 
   saveSong(song: any) {
-    return this.http.post('http://localhost:3000/api/v1/canciones/', song);
+    return this.http.post('http://192.168.56.102:3000/api/v1/canciones/', song);
   }
 
   updateGame(id: string, updatedSong: any): Observable<Cancion> {

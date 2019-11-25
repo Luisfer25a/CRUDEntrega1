@@ -58,6 +58,3 @@ footer{
     text-align: center;
 }
 
-::placeholder { /* Most modern browsers support this now. */
-    color:white;
- }
